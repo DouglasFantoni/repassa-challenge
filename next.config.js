@@ -4,7 +4,17 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
+  pageExtensions: ['page.tsx'],
+
   images: {
     domains: ['rickandmortyapi.com'],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/characters',
+      },
+    ];
   },
 };

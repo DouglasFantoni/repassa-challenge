@@ -1,18 +1,12 @@
 export const TEXTCOLORS = {
-  LIGHTGRAY: '#cecece',
-  GRAY: '#909090',
-  RED: '#db3339',
-  DARKGRAY: '#525252',
-  URL: '#259beb',
-  LIGHTBLACK: '#4F4F4F',
+  DARK: '#2b2d2b',
+  URLLIGHT: '#5d51a2',
+  URL: '#2E294E',
 };
 
 export const BGCOLORS = {
-  LIGHTGRAY: '#EDEDED',
-  GRAY: '#efefef',
-  DARKGRAY: '#D2D2D2',
-  RED: '#db3339',
-  BLUE: '#2D7575',
-  DARKBLUE: '#235a5a',
-  LIGHTBLACK: '#4f4f4f',
+  LIGHTGREEN: '#99aa38',
+  DARKGREEN: '#14591d',
+  GHOSTWHITE: '#f0eff4',
+  DARK: 'rgba(183, 183, 183, 0.2)',
 };

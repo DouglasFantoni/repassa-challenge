@@ -9,17 +9,18 @@ import {
   PRIMARY_FONT,
   PRIMARY_FONT_DEFINITION,
 } from '@constants/fonts';
+import { BGCOLORS, TEXTCOLORS } from '@constants/colors';
 
 const defaultTextOptions = {
   // lineHeight: '1.625'
   // fontFamily:
-  // color: DEFAULT_TEXT_COLOR
+  color: TEXTCOLORS.DARK,
 };
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#EC1C24',
+      main: BGCOLORS.DARKGREEN,
       dark: '#890C15',
       // contrastText: 'white',
     },
@@ -66,10 +67,10 @@ export const theme = createTheme({
     },
   },
   components: {
-    MuiButtonBase: {
+    MuiChip: {
       styleOverrides: {
         root: {
-          fontSize: FS_3,
+          fontSize: FS_6,
         },
       },
     },

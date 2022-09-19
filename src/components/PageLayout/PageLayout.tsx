@@ -4,7 +4,16 @@ import { FC } from 'react';
 
 const PageLayout: FC<any> = ({ children }) => {
   return (
-    <Container disableGutters sx={{ backgroundColor: BGCOLORS.GRAY, m: 0 }}>
+    <Container
+      maxWidth={false}
+      disableGutters
+      sx={{
+        minHeight: `100vh`,
+        backgroundColor: BGCOLORS.GHOSTWHITE,
+        m: 0,
+        py: 2,
+      }}
+    >
       {children}
     </Container>
   );
