@@ -7,14 +7,13 @@ import { Card } from '@mui/material';
 import Head from 'next/head';
 import PageLayout from '@components/PageLayout/PageLayout';
 import SearchInput from '@components/SearchInput/SearchInput';
-import CharacterList from './sections/CharacterList';
+import CharacterList from './_sections/CharacterList';
 
 export default function Home() {
   const [searchState, setSearchState] = useState('');
   const [paginationState, setPaginationState] = useState<number>(1);
 
   const handleChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('handleChangeSearchInput');
     setSearchState(e.target.value);
     setPaginationState(1);
   };
@@ -22,6 +21,10 @@ export default function Home() {
     <Box>
       <Head>
         <title>Personagens do Rick and Morty</title>
+        <meta
+          name="description"
+          content="Descubra quais são os personagens do Rick And Morty e tire suas curiosidades sobre eles"
+        />
       </Head>
       <PageLayout>
         <Container maxWidth={'md'}>

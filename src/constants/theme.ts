@@ -20,15 +20,11 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: BGCOLORS.DARKGREEN,
-      dark: '#890C15',
-      // contrastText: 'white',
+      dark: BGCOLORS.DARK,
     },
     secondary: {
-      main: '#EC1C24',
-      dark: '#890C15',
-      // main: BGCOLORS.BLUE,
-      // dark: BGCOLORS.DARKBLUE,
-      // contrastText: 'white',
+      main: BGCOLORS.LIGHTGREEN,
+      dark: BGCOLORS.DARK,
     },
   },
   typography: {
@@ -76,24 +72,6 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         contained: {
-          fontSize: FS_3,
-        },
-        root: {
-          fontSize: FS_3,
-        },
-      },
-    },
-    MuiInput: {
-      styleOverrides: {
-        root: {
-          // padding: SPC_INPUT_BASE,
-        },
-      },
-    },
-
-    MuiTab: {
-      styleOverrides: {
-        fullWidth: {
           fontSize: FS_3,
         },
         root: {

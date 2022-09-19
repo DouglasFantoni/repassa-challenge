@@ -21,8 +21,6 @@ const CharacterList: FC<IProps> = ({
 }) => {
   const url = new URL(API_CHARACTER_GETALL);
 
-  console.log('renderizou lkista');
-
   characterFilter.length > 2 &&
     url.searchParams.append('name', characterFilter);
   url.searchParams.append('page', `${paginationValue}`);
@@ -54,7 +52,7 @@ const CharacterList: FC<IProps> = ({
         <Box>
           <Grid container spacing={4}>
             {data.results.map((character) => (
-              <Grid item key={character.id} xs={12} md={3}>
+              <Grid item key={character.id} xs={12} sm={4} md={3}>
                 <CharacterCard character={character} />
               </Grid>
             ))}

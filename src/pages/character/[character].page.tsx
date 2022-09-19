@@ -23,34 +23,29 @@ interface IProps {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const params = context.params;
 
-  if (!params.character) {
-  }
-
   const url = `${API_CHARACTER_GETALL}/${params.character}`;
-  console.log(params, url);
 
   const data = await axios.get<ICharacterData>(url).then((res) => res.data);
-  console.log(data);
 
   return {
     props: {
       characterData: data,
-    },
-    // notFound: !(typeof chapter === 'object')
+    } as IProps,
+    notFound: !(typeof data === 'object'),
   };
 };
 
 const Handler: NextPage<IProps> = ({ characterData }) => {
-  console.log(characterData);
-
   const imageSize = 250;
-
-  console.log(characterData);
 
   return (
     <Box>
       <Head>
-        <title>Personagens do Rick</title>
+        <title>Informações sobre {characterData.name}</title>
+        <meta
+          name="description"
+          content="Descubra quais são os personagens do Rick And Morty e tire suas curiosidades sobre eles"
+        />
       </Head>
       <PageLayout>
         <Container maxWidth={'md'}>
@@ -119,11 +114,10 @@ const Handler: NextPage<IProps> = ({ characterData }) => {
 };
 
 const TextBolded = styled(Typography)(
-  ({ theme }) => `
+  () => `
   font-weight: bold;
     display: inline-block;
     padding-right: 5px;
-
 `
 );
 
@@ -132,16 +126,6 @@ const BoxDetail = styled('span')(
   font-size: ${FS_5};
   display: block;
   margin: ${theme.spacing(1)} 0;
-  
-`
-);
-
-const BoxScrooled = styled('div')(
-  ({ theme }) => `
-    max-height: 400px;
-    overflow: scroll;
-    box-shadow: inset 2px 3px gray;
-  
 `
 );
 

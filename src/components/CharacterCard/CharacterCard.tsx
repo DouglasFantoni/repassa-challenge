@@ -14,21 +14,19 @@ interface OwnProps {
 type Props = OwnProps;
 
 const CharacterCard: FunctionComponent<Props> = ({ character }) => {
-  const imageSize = '180px';
   const router = useRouter();
 
-  const onCLickHandler = () =>
-    router.push(
-      `/characters/${character.id}`
-      // {
-      //   query: { character: character.id },
-      // }
-    );
+  const onCLickHandler = () => router.push(`/character/${character.id}`);
   return (
     <Box>
       <Box display={'flex'} flexDirection={'column'}>
         <ButtonImageWrapper onClick={onCLickHandler}>
-          <Image layout="fill" objectFit="contain" src={character.image} />
+          <Image
+            layout="fill"
+            objectFit="contain"
+            alt={character.name}
+            src={character.image}
+          />
         </ButtonImageWrapper>
         <CustomCard>
           <Button onClick={onCLickHandler} fullWidth={true}>
@@ -54,7 +52,7 @@ const CharacterCard: FunctionComponent<Props> = ({ character }) => {
 };
 
 const ButtonImageWrapper = styled(Button)(
-  ({ theme }) => `
+  () => `
     position: relative;
     // top: -20px;
     border-radius: 5px;

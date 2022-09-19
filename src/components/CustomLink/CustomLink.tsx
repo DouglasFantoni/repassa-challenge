@@ -3,7 +3,7 @@ import Link from '@mui/material/Link';
 import { TEXTCOLORS } from '@constants/colors';
 
 const CustomLink = styled(Link)(
-  ({ theme }) => `
+  () => `
     display: block;
     cursor: pointer;
     user-select: none;
