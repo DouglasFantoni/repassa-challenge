@@ -1,8 +1,7 @@
 import { BGCOLORS } from '@constants/colors';
 import Container from '@mui/material/Container';
-import { FC, ReactElement } from 'react';
+import { FC } from 'react';
 
-// @ts-ignore
 const PageLayout: FC<any> = ({ children }) => {
   return (
     <Container

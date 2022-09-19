@@ -19,7 +19,6 @@ export default function MyApp(props: MyAppProps) {
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
-      // @ts-ignore
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
