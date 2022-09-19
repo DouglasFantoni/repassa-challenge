@@ -1,16 +1,12 @@
-import React, { Dispatch, FC, useEffect, useMemo, useState } from 'react';
-import { ICharacterData } from '../../../models/characterData';
+import React, { Dispatch, FC, useState } from 'react';
 import { CircularProgress, Grid, Pagination, Paper } from '@mui/material';
 import CharacterCard from '@components/CharacterCard/CharacterCard';
 import useSWR from 'swr';
 import { ICharacterGetAll } from '../../../models/requests/characterGetAll';
 import { API_CHARACTER_GETALL } from '@constants/apiUrls';
 import axios from 'axios';
-import { useBackdropState } from '../../../contexts/backdropContext';
 import Box from '@mui/material/Box';
-import CustomBackdrop from '../../../components/CustomBackdrop/CustomBackdrop';
 import Typography from '@mui/material/Typography';
-import { searchParamsToUrlQuery } from 'next/dist/shared/lib/router/utils/querystring';
 
 interface IProps {
   characterFilter: string;
@@ -23,7 +19,7 @@ const CharacterList: FC<IProps> = ({
   paginationOnChange,
   characterFilter,
 }) => {
-  let url = new URL(API_CHARACTER_GETALL);
+  const url = new URL(API_CHARACTER_GETALL);
 
   console.log('renderizou lkista');
 

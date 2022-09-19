@@ -6,7 +6,6 @@ import {
   FS_4,
   FS_5,
   FS_6,
-  PRIMARY_FONT,
   PRIMARY_FONT_DEFINITION,
 } from '@constants/fonts';
 import { BGCOLORS, TEXTCOLORS } from '@constants/colors';

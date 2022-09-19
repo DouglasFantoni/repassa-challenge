@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box';
-import { IconButton, InputBase } from '@mui/material';
+import { InputBase } from '@mui/material';
 import { FcSearch } from 'react-icons/fc';
 
-import React, { Dispatch, FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 
 interface OwnProps {
   state: string;

@@ -4,20 +4,15 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import { Card, Divider, Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import SearchInput from '@components/SearchInput/SearchInput';
-import CharacterList from './sections/CharacterList';
 import PageLayout from '@components/PageLayout/PageLayout';
 import { GetServerSideProps, NextPage } from 'next';
 import axios from 'axios';
 import { API_CHARACTER_GETALL } from '@constants/apiUrls';
-import useSWR from 'swr';
-import { ICharacterGetAll } from '../../models/requests/characterGetAll';
 import { ICharacterData } from '../../models/characterData';
 import Image from 'next/image';
 import { BGCOLORS } from '@constants/colors';
 import { styled } from '@mui/material/styles';
 import { FS_5 } from '@constants/fonts';
-import Link from '@mui/material/Link';
 import CustomLink from '@components/CustomLink/CustomLink';
 import { RiMovieLine } from 'react-icons/ri';
 
@@ -68,6 +63,7 @@ const Handler: NextPage<IProps> = ({ characterData }) => {
                       border: `1px solid ${BGCOLORS.DARK}`,
                       borderRadius: 5,
                     }}
+                    alt={characterData.name}
                     objectFit="contain"
                     height={imageSize}
                     width={imageSize}
@@ -107,8 +103,8 @@ const Handler: NextPage<IProps> = ({ characterData }) => {
               </Box>
               <Divider sx={{ mt: 1, mb: 2 }} />
               {characterData.episode.map((link, index) => (
-                <Box display={'flex'}>
-                  <CustomLink href={'#'} key={index}>
+                <Box display={'flex'} key={index}>
+                  <CustomLink href={'#'}>
                     <RiMovieLine />
                     {` ${link}`}
                   </CustomLink>

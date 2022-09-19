@@ -38,7 +38,7 @@ const BackdropContextProvider = ({ children }: any) => {
 };
 
 function useBackdropState() {
-  let context = useContext(BackdropContext);
+  const context = useContext(BackdropContext);
 
   if (context === null) {
     throw Error('Contexto Não definido');

@@ -1,11 +1,10 @@
 import Box from '@mui/material/Box';
-import { Badge, Button, ButtonBase, Card, Chip, Grid } from '@mui/material';
+import { Button, Chip } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { FunctionComponent } from 'react';
 import { ICharacterData } from '../../models/characterData';
 import Image from 'next/image';
 import { styled } from '@mui/material/styles';
-import { BGCOLORS } from '@constants/colors';
 import { useRouter } from 'next/router';
 
 interface OwnProps {
